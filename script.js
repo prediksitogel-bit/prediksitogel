@@ -908,6 +908,76 @@ function countdown(market) {
 
 }
 
+/* =====================================================
+   CEK SINGAPORE
+   SELASA = 2
+   JUMAT = 5
+===================================================== */
+
+function singaporeTutupHariIni() {
+
+    const hari =
+        sekarang().getDay();
+
+    return (
+        hari === 2 ||
+        hari === 5
+    );
+
+}
+
+
+/* =====================================================
+   STATUS MARKET
+===================================================== */
+
+function statusMarket(market) {
+
+    /* Singapore tutup Selasa & Jumat */
+
+    if (
+        market.id === "singapore"
+        &&
+        singaporeTutupHariIni()
+    ) {
+
+        return "TUTUP";
+
+    }
+
+
+    const now =
+        sekarang();
+
+
+    const bagian =
+        market.tutup.split(":");
+
+
+    const tutup =
+        new Date();
+
+
+    tutup.setHours(
+        Number(bagian[0]),
+        Number(bagian[1]),
+        0,
+        0
+    );
+
+
+    if (now >= tutup) {
+
+        return "TUTUP";
+
+    }
+
+
+    return "BUKA";
+
+}
+
+
 
 /* =====================================================
    TAMPIL MARKET
@@ -1364,6 +1434,71 @@ function tampilMarket() {
 
 }
 
+
+/* =====================================================
+   CEK TAIPEI
+   SELASA = 2
+   JUMAT = 5
+===================================================== */
+
+function taipeiTutupHariIni() {
+
+    const hari = sekarang().getDay();
+
+    return (
+        hari === 2 ||
+        hari === 5
+    );
+}
+
+
+/* =====================================================
+   STATUS MARKET
+===================================================== */
+
+function statusMarket(market) {
+
+    /* Taipei tutup Selasa & Jumat */
+
+    if (
+        market.id === "taipei" &&
+        taipeiTutupHariIni()
+    ) {
+
+        return "TUTUP";
+
+    }
+
+
+    const now =
+        sekarang();
+
+
+    const bagian =
+        market.tutup.split(":");
+
+
+    const tutup =
+        new Date();
+
+
+    tutup.setHours(
+        Number(bagian[0]),
+        Number(bagian[1]),
+        0,
+        0
+    );
+
+
+    if (now >= tutup) {
+
+        return "TUTUP";
+
+    }
+
+
+    return "BUKA";
+}
 
 /* =====================================================
    RESULT BERGERAK
