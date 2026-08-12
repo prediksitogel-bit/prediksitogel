@@ -1,0 +1,2425 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #071725,
+            #02070c 70%
+        );
+
+    color: white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+.container {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 12px;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+    text-align: center;
+
+    margin-bottom: 14px;
+
+}
+
+
+header h1 {
+
+    margin: 5px 0;
+
+    color: #00d9ff;
+
+    font-size: 23px;
+
+}
+
+
+.tanggal {
+
+    color: #7e909d;
+
+    font-size: 10px;
+
+}
+
+
+.tanggal span {
+
+    color: #ffe600;
+
+}
+
+
+.jam {
+
+    margin-top: 5px;
+
+    color: #7e909d;
+
+    font-size: 10px;
+
+}
+
+
+.jam span {
+
+    color: #00ffcc;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   STATUS ATAS
+========================= */
+
+.market-status {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.status-box {
+
+    border: 1px solid #174c68;
+
+    background: #06111a;
+
+    border-radius: 6px;
+
+    padding: 8px;
+
+    text-align: center;
+
+}
+
+
+.status-box span {
+
+    display: block;
+
+    color: #738794;
+
+    font-size: 8px;
+
+}
+
+
+.status-box strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #00ff88;
+
+    font-size: 10px;
+
+}
+
+
+.status-box strong.tutup {
+
+    color: #ff5252;
+
+}
+
+
+.status-box strong.result {
+
+    color: #ffe600;
+
+}
+
+
+/* =========================
+   MARKET GRID
+========================= */
+
+#marketContainer {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+}
+
+
+/* =========================
+   MARKET CARD
+========================= */
+
+.market {
+
+    background: #06111a;
+
+    border: 1px solid #174c68;
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+}
+
+
+.market-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.market-name {
+
+    color: #00d9ff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.status {
+
+    border: 1px solid #00ff88;
+
+    color: #00ff88;
+
+    border-radius: 4px;
+
+    padding: 4px 8px;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+}
+
+
+.status.tutup {
+
+    color: #ff5252;
+
+    border-color: #ff5252;
+
+}
+
+
+.status.result {
+
+    color: #ffe600;
+
+    border-color: #ffe600;
+
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown {
+
+    margin-top: 7px;
+
+    padding: 7px;
+
+    background: #02080d;
+
+    border-radius: 4px;
+
+    text-align: center;
+
+    color: #617480;
+
+    font-size: 8px;
+
+}
+
+
+.countdown strong {
+
+    color: #00d9ff;
+
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result-box {
+
+    margin-top: 9px;
+
+    border: 1px solid #315269;
+
+    border-radius: 6px;
+
+    padding: 11px;
+
+    text-align: center;
+
+}
+
+
+.result-title {
+
+    color: #718692;
+
+    font-size: 8px;
+
+}
+
+
+.result-number {
+
+    margin-top: 6px;
+
+    min-height: 38px;
+
+    color: #ffe600;
+
+    font-family: monospace;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    letter-spacing: 7px;
+
+}
+
+
+.result-number.rolling {
+
+    animation:
+        rollingNumber
+        0.08s
+        infinite;
+
+}
+
+
+@keyframes rollingNumber {
+
+    0% {
+
+        transform:
+            translateY(0);
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-2px);
+
+        opacity: .45;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+.result-number.final {
+
+    text-shadow:
+        0 0 5px #ffe600,
+        0 0 12px #ffe600;
+
+}
+
+
+/* =========================
+   KOTAK INFO
+========================= */
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 5px;
+
+    margin-top: 8px;
+
+}
+
+
+.info-box {
+
+    min-height: 38px;
+
+    background: #030a10;
+
+    border: 1px solid #29475d;
+
+    border-radius: 5px;
+
+    padding: 6px;
+
+}
+
+
+.info-title {
+
+    color: #718692;
+
+    font-size: 7px;
+
+}
+
+
+.info-value {
+
+    margin-top: 4px;
+
+    color: #ffe600;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   ANGKA
+========================= */
+
+.number-section {
+
+    margin-top: 9px;
+
+}
+
+
+.section-title {
+
+    margin-bottom: 5px;
+
+    color: #00d9ff;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+}
+
+
+.number-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 4px;
+
+}
+
+
+.number-item {
+
+    background: #02080d;
+
+    border: 1px solid #29475d;
+
+    border-radius: 4px;
+
+    padding: 5px 7px;
+
+    color: white;
+
+    font-size: 8px;
+
+}
+
+
+.number-item.hot {
+
+    color: #ff5555;
+
+    border-color: #9d3030;
+
+}
+
+
+.number-item.colok {
+
+    color: #00ff88;
+
+    border-color: #08764c;
+
+}
+
+
+/* =========================
+   DETAIL
+========================= */
+
+.detail {
+
+    margin-top: 8px;
+
+}
+
+
+.detail-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid #172936;
+
+    padding: 6px 0;
+
+    font-size: 8px;
+
+}
+
+
+.detail-row span:first-child {
+
+    color: #687c89;
+
+}
+
+
+.detail-row span:last-child {
+
+    color: white;
+
+}
+
+
+/* =========================
+   SHIO MINI
+========================= */
+
+.market-shio {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.market-shio img {
+
+    width: 40px;
+
+    height: 40px;
+
+    object-fit: contain;
+
+}
+
+
+.market-shio-name {
+
+    color: #ffe600 !important;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   SHIO
+========================= */
+
+.shio-section {
+
+    margin-top: 12px;
+
+    padding: 12px;
+
+    background: #06111a;
+
+    border:
+        1px solid #174c68;
+
+    border-radius: 8px;
+
+}
+
+
+.shio-section h2 {
+
+    margin-top: 0;
+
+    color: #00d9ff;
+
+    font-size: 16px;
+
+}
+
+
+.shio-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 7px;
+
+}
+
+
+.shio-card {
+
+    padding: 7px;
+
+    text-align: center;
+
+    background: #030a10;
+
+    border:
+        1px solid #29475d;
+
+    border-radius: 6px;
+
+}
+
+
+.shio-card img {
+
+    width: 65px;
+
+    height: 65px;
+
+    object-fit: contain;
+
+}
+
+
+.shio-number {
+
+    color: #738692;
+
+    font-size: 7px;
+
+}
+
+
+.shio-name {
+
+    margin-top: 3px;
+
+    color: #ffe600;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 20px;
+
+    text-align: center;
+
+    color: #526673;
+
+    font-size: 8px;
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+    .shio-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+    }
+
+}
+
+
+/* =========================
+   HP
+========================= */
+
+@media (max-width: 600px) {
+
+    #marketContainer {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .market-status {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .shio-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 400px) {
+
+    .shio-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .result-number {
+
+        font-size: 24px;
+
+        letter-spacing: 5px;
+
+    }
+
+}
+
+/* BUKU MIMPI */
+
+/* =========================================
+   BUKU MIMPI - GRID
+========================================= */
+
+#mimpiGrid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 6px;
+
+    padding: 6px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.dream-card {
+    min-width: 0;
+
+    min-height: 85px;
+
+    padding: 8px 6px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171027,
+            #0d0919
+        );
+
+    border: 1px solid #45385b;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+
+/* =========================================
+   NOMOR
+========================================= */
+
+.dream-number {
+    width: 100%;
+
+    margin-bottom: 5px;
+
+    color: #ffd84d;
+
+    font-size: 17px;
+
+    line-height: 20px;
+
+    font-weight: 900;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.dream-text {
+    width: 100%;
+
+    color: #eee9f5;
+
+    font-size: 8px;
+
+    line-height: 11px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+
+    white-space: normal;
+
+    display: -webkit-box;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp: 5;
+
+    overflow: hidden;
+}
+
+
+/* HOVER */
+
+.dream-card:hover {
+    border-color: #00d9ff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, .18);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    #mimpiGrid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 6px;
+    }
+
+}
+
+
+/* =========================================
+   ANDROID / HP
+========================================= */
+
+@media (max-width: 600px) {
+
+    #mimpiGrid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+
+        padding: 7px;
+    }
+
+
+    .dream-card {
+        min-height: 105px;
+
+        padding: 9px 7px;
+
+        border-radius: 8px;
+    }
+
+
+    .dream-number {
+        font-size: 20px;
+
+        line-height: 22px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .dream-text {
+        font-size: 5px;
+
+        line-height: 12px;
+
+        -webkit-line-clamp: 6;
+    }
+
+}
+
+
+/* =========================================
+   HP KECIL
+========================================= */
+
+@media (max-width: 380px) {
+
+    #mimpiGrid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 5px;
+
+        padding: 5px;
+    }
+
+
+    .dream-card {
+        min-height: 98px;
+
+        padding: 7px 5px;
+    }
+
+
+    .dream-number {
+        font-size: 18px;
+    }
+
+
+    .dream-text {
+        font-size: 8px;
+
+        line-height: 11px;
+    }
+
+}
+
+
+/* ===============================
+   HEADER
+================================ */
+
+.buku-header {
+
+    min-height: 160px;
+
+    padding: 28px 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid #153c50;
+
+    background:
+        linear-gradient(
+            145deg,
+            #061825,
+            #020b13
+        );
+}
+
+.buku-header h2 {
+
+    margin: 0;
+
+    color: var(--cyan);
+
+    font-size: 25px;
+}
+
+.buku-header p {
+
+    margin: 12px 0 0;
+
+    color: #f2f7fa;
+
+    font-size: 16px;
+}
+
+
+/* ===============================
+   BUTTON
+================================ */
+
+.buku-actions {
+
+    display: flex;
+
+    gap: 12px;
+}
+
+.btn {
+
+    min-width: 145px;
+
+    padding: 14px 22px;
+
+    border-radius: 13px;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.btn-buka {
+
+    color: white;
+
+    border:
+        1px solid #00d9ff;
+
+    background:
+        linear-gradient(
+            180deg,
+            #09c7f5,
+            #0789c5
+        );
+
+    box-shadow:
+        0 0 20px #00d9ff44;
+}
+
+.btn-tutup {
+
+    color: white;
+
+    border:
+        1px solid #4b6272;
+
+    background:
+        linear-gradient(
+            180deg,
+            #233746,
+            #101d27
+        );
+}
+
+.btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.1);
+}
+
+
+/* ===============================
+   PANEL
+================================ */
+
+.buku-panel {
+
+    padding:
+        18px 28px
+        25px;
+}
+
+
+/* ===============================
+   TOOLBAR
+================================ */
+
+.toolbar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 16px;
+}
+
+
+/* SEARCH */
+
+.search-box {
+
+    width: 340px;
+
+    flex: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid #29485a;
+
+    border-radius: 9px;
+
+    background: #020a11;
+}
+
+.search-box span {
+
+    font-size: 28px;
+
+    color: #9bb0bd;
+}
+
+.search-box input {
+
+    width: 100%;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+/* ===============================
+   FILTER
+================================ */
+
+.kategori {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.filter {
+
+    padding:
+        10px 15px;
+
+    border:
+        1px solid #314957;
+
+    border-radius: 9px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            #172a38,
+            #0c1821
+        );
+
+    cursor: pointer;
+}
+
+.filter.active {
+
+    border-color:
+        #00d9ff;
+
+    background:
+        linear-gradient(
+            #0ab9ed,
+            #087fb1
+        );
+}
+
+
+/* ===============================
+   GRID
+================================ */
+
+.mimpi-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+/* ===============================
+   CARD
+================================ */
+
+.mimpi-card {
+
+    min-height: 155px;
+
+    padding: 14px;
+
+    border:
+        1px solid #29485a;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b1c29,
+            #06111a
+        );
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    text-align: center;
+}
+
+.mimpi-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #00d9ff;
+
+    box-shadow:
+        0 0 18px #00d9ff22;
+}
+
+
+/* NOMOR */
+
+.card-number {
+
+    width: 38px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 5px;
+
+    border:
+        1px solid #0875a0;
+
+    border-radius: 7px;
+
+    color:
+        var(--cyan);
+
+    background:
+        #041722;
+
+    font-weight: 900;
+}
+
+
+/* ICON */
+
+.card-icon {
+
+    font-size: 35px;
+}
+
+
+/* TITLE */
+
+.card-title {
+
+    margin-top: 3px;
+
+    font-weight: 900;
+
+    font-size: 15px;
+}
+
+
+/* DESCRIPTION */
+
+.card-desc {
+
+    margin-top: 5px;
+
+    color: #d2dde3;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+/* ===============================
+   EMPTY
+================================ */
+
+.empty-state {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 45px;
+
+    color: #8299a7;
+}
+
+
+/* ===============================
+   PAGINATION
+================================ */
+
+.pagination {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+.pagination button,
+.page-number {
+
+    min-width: 38px;
+
+    height: 38px;
+
+    border:
+        1px solid #29485a;
+
+    border-radius: 7px;
+
+    background: #071620;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.page-number.active {
+
+    border-color:
+        #00d9ff;
+
+    background:
+        #078cc5;
+}
+
+
+/* ===============================
+   MODAL
+================================ */
+
+.mimpi-modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: #000b;
+
+    backdrop-filter:
+        blur(8px);
+}
+
+.mimpi-modal.show {
+
+    display: flex;
+
+    animation:
+        fade .2s ease;
+}
+
+
+/* CONTENT */
+
+.mimpi-content {
+
+    position: relative;
+
+    width:
+        min(760px, 100%);
+
+    max-height: 90vh;
+
+    overflow: auto;
+
+    padding: 30px;
+
+    border:
+        1px solid #426174;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0a1a28,
+            #030b13
+        );
+
+    box-shadow:
+        0 30px 100px #000d,
+        0 0 25px #00d9ff18;
+
+    animation:
+        zoom .22s ease;
+}
+
+
+/* CLOSE */
+
+.mimpi-close {
+
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    width: 46px;
+
+    height: 46px;
+
+    border:
+        1px solid #385363;
+
+    border-radius: 50%;
+
+    background:
+        #101f2b;
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+/* ===============================
+   DETAIL HEADER
+================================ */
+
+.detail-head {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-right: 55px;
+}
+
+.detail-number {
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid #00b8ee;
+
+    border-radius: 12px;
+
+    color:
+        var(--cyan);
+
+    font-size: 32px;
+
+    font-weight: 900;
+
+    background:
+        #041722;
+}
+
+.detail-head h3 {
+
+    margin:
+        0 0 8px;
+
+    font-size: 30px;
+}
+
+.category-badge {
+
+    padding:
+        6px 10px;
+
+    border:
+        1px solid #3b5260;
+
+    border-radius: 8px;
+
+    color:
+        #dce8ee;
+
+    background:
+        #0b1822;
+
+    font-size: 12px;
+}
+
+
+/* ===============================
+   DETAIL BODY
+================================ */
+
+.detail-body {
+
+    display: grid;
+
+    grid-template-columns:
+        280px 1fr;
+
+    gap: 25px;
+
+    align-items: center;
+
+    margin-top: 25px;
+}
+
+.detail-icon {
+
+    min-height: 200px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        2px solid #ffc400;
+
+    border-radius: 13px;
+
+    background:
+        radial-gradient(
+            circle,
+            #18382f,
+            #07130f
+        );
+
+    font-size: 100px;
+
+    box-shadow:
+        0 0 15px #ffc40033;
+}
+
+
+/* COPY */
+
+.detail-copy h4,
+.detail-bottom h4 {
+
+    margin:
+        0 0 10px;
+
+    color:
+        var(--cyan);
+
+    letter-spacing:
+        .4px;
+}
+
+.detail-copy p {
+
+    margin: 0;
+
+    color:
+        #e4edf1;
+
+    line-height:
+        1.7;
+
+    font-size: 14px;
+}
+
+
+/* ===============================
+   DIVIDER
+================================ */
+
+.detail-divider {
+
+    height: 1px;
+
+    background:
+        #2a4555;
+
+    margin:
+        25px 0;
+}
+
+
+/* ===============================
+   BOTTOM
+================================ */
+
+.detail-bottom {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 280px;
+
+    gap: 25px;
+}
+
+.detail-bottom ul {
+
+    margin: 0;
+
+    padding-left: 20px;
+
+    color:
+        #dce7ec;
+
+    line-height:
+        2;
+}
+
+
+/* RELATED */
+
+.related {
+
+    padding: 15px;
+
+    border:
+        1px solid #294453;
+
+    border-radius: 12px;
+
+    background:
+        #07131d;
+}
+
+.related h4 {
+
+    font-size: 14px;
+}
+
+.tag {
+
+    display: inline-block;
+
+    margin: 3px;
+
+    padding:
+        7px 10px;
+
+    border:
+        1px solid #0879a8;
+
+    border-radius: 8px;
+
+    color:
+        #dceaf0;
+
+    font-size: 12px;
+}
+
+
+/* ===============================
+   NOTE
+================================ */
+
+.note {
+
+    margin-top: 20px;
+
+    padding:
+        11px 14px;
+
+    border:
+        1px solid #23516a;
+
+    border-radius: 9px;
+
+    color:
+        #b9cbd4;
+
+    background:
+        #071a28;
+
+    font-size: 12px;
+}
+
+
+/* ===============================
+   ANIMATION
+================================ */
+
+@keyframes fade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes zoom {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.94);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* ===============================
+   TABLET
+================================ */
+
+@media(max-width:900px) {
+
+    .toolbar {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+    .search-box {
+
+        width: 100%;
+    }
+
+    .mimpi-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* ===============================
+   HP
+================================ */
+
+@media(max-width:650px) {
+
+    body {
+
+        padding: 10px;
+    }
+
+    .buku-header {
+
+        padding: 20px;
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+    .buku-actions {
+
+        width: 100%;
+    }
+
+    .btn {
+
+        min-width: 0;
+
+        flex: 1;
+    }
+
+    .mimpi-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .detail-body,
+    .detail-bottom {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .detail-icon {
+
+        min-height: 150px;
+    }
+
+    .mimpi-content {
+
+        padding: 22px;
+    }
+
+}
+
+.buku-mimpi-section {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    background: #0d091b;
+}
+
+.buku-mimpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 8px;
+    padding: 10px;
+
+    background: #151026;
+
+    border: 1px solid #49355f;
+    border-radius: 7px;
+}
+
+.buku-mimpi-header h2 {
+    margin: 0;
+
+    color: #f5d263;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.buku-mimpi-header span {
+    color: #b8a7ca;
+    font-size: 10px;
+}
+
+
+/* SEARCH */
+
+.search-mimpi {
+    width: 100%;
+    height: 34px;
+
+    margin-bottom: 8px;
+    padding: 0 10px;
+
+    box-sizing: border-box;
+
+    background: #100c1e;
+
+    border: 1px solid #4b3860;
+    border-radius: 6px;
+
+    outline: none;
+
+    color: #fff;
+
+    font-size: 11px;
+}
+
+.search-mimpi:focus {
+    border-color: #d8b84c;
+
+    box-shadow:
+        0 0 8px
+        rgba(216,184,76,.2);
+}
+
+
+/* GRID */
+
+.mimpi-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(9, 1fr);
+
+    gap: 5px;
+}
+
+
+/* CARD */
+
+.dream-card {
+
+    min-height: 72px;
+
+    padding: 5px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b152b,
+            #0d0a18
+        );
+
+    border:
+        1px solid #4a385b;
+
+    border-radius: 7px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: .15s;
+}
+
+.dream-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #d9b84f;
+
+    box-shadow:
+        0 0 10px
+        rgba(217,184,79,.25);
+}
+
+
+/* NUMBER */
+
+.dream-number {
+    margin-bottom: 6px;
+
+    color: #f5d263;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+    line-height: 1;
+
+    font-weight: 900;
+
+    text-shadow:
+        0 0 6px rgba(245, 210, 99, .35);
+}
+
+
+/* TEXT */
+
+.dream-text {
+
+    color: #ddd6e6;
+
+    font-size: 10px;
+
+    line-height: 1.35;
+
+    display: -webkit-box;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+    .mimpi-grid {
+        grid-template-columns:
+            repeat(7, 1fr);
+    }
+
+}
+
+@media(max-width:650px) {
+
+    .mimpi-grid {
+        grid-template-columns:
+            repeat(5, 1fr);
+    }
+
+}
+
+@media(max-width:450px) {
+
+    .mimpi-grid {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+    .dream-card {
+        min-height: 70px;
+    }
+
+    .dream-number {
+        font-size: 14px;
+    }
+
+    .dream-text {
+        font-size: 50px;
+    }
+
+}
+
+/* TEKS BERJALAN PREDIKSI TOGEL */
+
+.ticker-togel {
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #080d14;
+
+    border-top: 1px solid #00c8ff;
+    border-bottom: 1px solid #00c8ff;
+
+    box-sizing: border-box;
+}
+
+
+/* JUDUL */
+
+.ticker-title {
+    z-index: 2;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 15px;
+
+    background: #101725;
+
+    color: #ffd83d;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    white-space: nowrap;
+
+    border-right: 1px solid #00c8ff;
+
+    box-shadow:
+        3px 0 12px rgba(0, 200, 255, .2);
+}
+
+
+/* AREA TEKS */
+
+.ticker-wrapper {
+    flex: 1;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+}
+
+
+/* TEKS BERJALAN */
+
+.ticker-content {
+    display: inline-block;
+
+    padding-left: 100%;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 40px;
+
+    white-space: nowrap;
+
+    animation:
+        tickerTogel 25s linear infinite;
+}
+
+
+@keyframes tickerTogel {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+
+}
+
+
+/* PAUSE SAAT MOUSE DIARAHKAN */
+
+.ticker-wrapper:hover .ticker-content {
+    animation-play-state: paused;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .ticker-togel {
+        height: 36px;
+    }
+
+    .ticker-title {
+        padding: 0 9px;
+        font-size: 9px;
+    }
+
+    .ticker-content {
+        font-size: 9px;
+        line-height: 36px;
+        animation-duration: 20s;
+    }
+
+}
+
+/* BANNER */
+
+.image-banner {
+    position: relative;
+
+    width: 100%;
+    height: 320px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    border: 1px solid #1c5268;
+
+    box-sizing: border-box;
+}
+
+
+/* GAMBAR BANNER */
+
+.banner-img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+}
+
+
+/* LAPISAN GELAP AGAR TEKS TERLIHAT */
+
+.banner-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.82),
+            rgba(0,0,0,.42),
+            rgba(0,0,0,.72)
+        );
+}
+
+
+/* TEKS */
+
+.banner-content {
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+
+.banner-badge {
+    padding: 7px 14px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 20px;
+
+    background: rgba(0,0,0,.5);
+
+    color: #00eaff;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+.banner-content h1 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: clamp(32px, 7vw, 60px);
+
+    line-height: .95;
+
+    font-weight: 1000;
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,.8);
+}
+
+
+.banner-content h1 span {
+    color: #ffd83d;
+
+    display: block;
+
+    text-shadow:
+        0 0 15px rgba(255,216,61,.5);
+}
+
+
+.banner-content p {
+    margin: 14px 0 20px;
+
+    color: #fff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.banner-content button {
+    padding: 11px 20px;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 6px;
+
+    background: rgba(0,20,30,.85);
+
+    color: #00eaff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+
+.banner-content button:hover {
+    background: #00d9ff;
+
+    color: #001018;
+
+    box-shadow:
+        0 0 18px rgba(0,217,255,.5);
+}
+
+
+/* ANDROID */
+
+@media (max-width: 600px) {
+
+    .image-banner {
+        height: 220px;
+
+        border-radius: 8px;
+    }
+
+    .banner-content {
+        padding: 12px;
+    }
+
+    .banner-content h1 {
+        font-size: 34px;
+    }
+
+    .banner-content p {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+}

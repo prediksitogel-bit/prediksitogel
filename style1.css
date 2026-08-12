@@ -1,0 +1,1356 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #020a12;
+    --panel: #06131f;
+    --panel2: #091b2a;
+    --line: #164b67;
+    --cyan: #00d9ff;
+    --yellow: #ffe600;
+    --muted: #a9bbc6;
+    --white: #f5fbff;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #0a2639 0,
+            #02070c 55%,
+            #010407 100%
+        );
+
+    color: var(--white);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* ===============================
+   CONTAINER
+================================ */
+
+.buku-mimpi {
+    width: min(1180px, 100%);
+    margin: auto;
+
+    border: 1px solid #0d668d;
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #03101a;
+
+    box-shadow:
+        0 20px 60px #0008;
+}
+
+
+/* ===============================
+   HEADER
+================================ */
+
+.buku-header {
+
+    min-height: 160px;
+
+    padding: 28px 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid #153c50;
+
+    background:
+        linear-gradient(
+            145deg,
+            #061825,
+            #020b13
+        );
+}
+
+.buku-header h2 {
+
+    margin: 0;
+
+    color: var(--cyan);
+
+    font-size: 25px;
+}
+
+.buku-header p {
+
+    margin: 12px 0 0;
+
+    color: #f2f7fa;
+
+    font-size: 16px;
+}
+
+
+/* ===============================
+   BUTTON
+================================ */
+
+.buku-actions {
+
+    display: flex;
+
+    gap: 12px;
+}
+
+.btn {
+
+    min-width: 145px;
+
+    padding: 14px 22px;
+
+    border-radius: 13px;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.btn-buka {
+
+    color: white;
+
+    border:
+        1px solid #00d9ff;
+
+    background:
+        linear-gradient(
+            180deg,
+            #09c7f5,
+            #0789c5
+        );
+
+    box-shadow:
+        0 0 20px #00d9ff44;
+}
+
+.btn-tutup {
+
+    color: white;
+
+    border:
+        1px solid #4b6272;
+
+    background:
+        linear-gradient(
+            180deg,
+            #233746,
+            #101d27
+        );
+}
+
+.btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.1);
+}
+
+
+/* ===============================
+   PANEL
+================================ */
+
+.buku-panel {
+
+    padding:
+        18px 28px
+        25px;
+}
+
+
+/* ===============================
+   TOOLBAR
+================================ */
+
+.toolbar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 16px;
+}
+
+
+/* SEARCH */
+
+.search-box {
+
+    width: 340px;
+
+    flex: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid #29485a;
+
+    border-radius: 9px;
+
+    background: #020a11;
+}
+
+.search-box span {
+
+    font-size: 28px;
+
+    color: #9bb0bd;
+}
+
+.search-box input {
+
+    width: 100%;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+/* ===============================
+   FILTER
+================================ */
+
+.kategori {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.filter {
+
+    padding:
+        10px 15px;
+
+    border:
+        1px solid #314957;
+
+    border-radius: 9px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            #172a38,
+            #0c1821
+        );
+
+    cursor: pointer;
+}
+
+.filter.active {
+
+    border-color:
+        #00d9ff;
+
+    background:
+        linear-gradient(
+            #0ab9ed,
+            #087fb1
+        );
+}
+
+
+/* ===============================
+   GRID
+================================ */
+
+.mimpi-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+/* ===============================
+   CARD
+================================ */
+
+.mimpi-card {
+
+    min-height: 155px;
+
+    padding: 14px;
+
+    border:
+        1px solid #29485a;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b1c29,
+            #06111a
+        );
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    text-align: center;
+}
+
+.mimpi-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #00d9ff;
+
+    box-shadow:
+        0 0 18px #00d9ff22;
+}
+
+
+/* NOMOR */
+
+.card-number {
+
+    width: 38px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 5px;
+
+    border:
+        1px solid #0875a0;
+
+    border-radius: 7px;
+
+    color:
+        var(--cyan);
+
+    background:
+        #041722;
+
+    font-weight: 900;
+}
+
+
+/* ICON */
+
+.card-icon {
+
+    font-size: 35px;
+}
+
+
+/* TITLE */
+
+.card-title {
+
+    margin-top: 3px;
+
+    font-weight: 900;
+
+    font-size: 15px;
+}
+
+
+/* DESCRIPTION */
+
+.card-desc {
+
+    margin-top: 5px;
+
+    color: #d2dde3;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+/* ===============================
+   EMPTY
+================================ */
+
+.empty-state {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 45px;
+
+    color: #8299a7;
+}
+
+
+/* ===============================
+   PAGINATION
+================================ */
+
+.pagination {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+.pagination button,
+.page-number {
+
+    min-width: 38px;
+
+    height: 38px;
+
+    border:
+        1px solid #29485a;
+
+    border-radius: 7px;
+
+    background: #071620;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.page-number.active {
+
+    border-color:
+        #00d9ff;
+
+    background:
+        #078cc5;
+}
+
+
+/* ===============================
+   MODAL
+================================ */
+
+/* ===============================
+   POPUP BUKU MIMPI
+================================ */
+
+.mimpi-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 10000;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    background: rgba(0, 0, 0, .78);
+
+    backdrop-filter: blur(7px);
+
+    overflow: hidden;
+}
+
+.mimpi-modal.show {
+    display: flex;
+
+    animation: fade .2s ease;
+}
+
+
+/* ===============================
+   ISI POPUP
+================================ */
+
+.mimpi-content {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 760px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 28px;
+
+    border: 1px solid #426174;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0a1a28,
+            #030b13
+        );
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.8),
+        0 0 25px rgba(0,217,255,.12);
+
+    animation: zoom .22s ease;
+
+    scrollbar-width: thin;
+}
+
+
+/* ===============================
+   TOMBOL CLOSE
+================================ */
+
+.mimpi-close {
+
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #385363;
+
+    border-radius: 50%;
+
+    background: #101f2b;
+
+    color: white;
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+.mimpi-close:hover {
+
+    background: #173344;
+
+    border-color: #00d9ff;
+
+    color: #00d9ff;
+}
+
+
+/* ===============================
+   HEADER DETAIL
+================================ */
+
+.detail-head {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding-right: 55px;
+
+    min-width: 0;
+}
+
+.detail-number {
+
+    width: 62px;
+    height: 62px;
+
+    flex: 0 0 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #00b8ee;
+
+    border-radius: 12px;
+
+    color: #00d9ff;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    background: #041722;
+}
+
+.detail-head h3 {
+
+    margin: 0 0 7px;
+
+    font-size: 28px;
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+}
+
+.category-badge {
+
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border: 1px solid #3b5260;
+
+    border-radius: 8px;
+
+    color: #dce8ee;
+
+    background: #0b1822;
+
+    font-size: 12px;
+}
+
+
+/* ===============================
+   BAGIAN GAMBAR + DESKRIPSI
+================================ */
+
+.detail-body {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 280px)
+        minmax(0, 1fr);
+
+    gap: 22px;
+
+    align-items: center;
+
+    margin-top: 22px;
+
+    width: 100%;
+}
+
+.detail-icon {
+
+    width: 100%;
+
+    min-height: 200px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #ffc400;
+
+    border-radius: 13px;
+
+    background:
+        radial-gradient(
+            circle,
+            #18382f,
+            #07130f
+        );
+
+    font-size: 90px;
+
+    box-shadow:
+        0 0 15px #00ffdd33;
+
+    overflow: hidden;
+}
+
+.detail-copy {
+
+    min-width: 0;
+}
+
+.detail-copy h4,
+.detail-bottom h4 {
+
+    margin: 0 0 10px;
+
+    color: #00d9ff;
+
+    font-size: 14px;
+
+    letter-spacing: .4px;
+}
+
+.detail-copy p {
+
+    margin: 0;
+
+    color: #e4edf1;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ===============================
+   PEMISAH
+================================ */
+
+.detail-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: #2a4555;
+
+    margin: 22px 0;
+}
+
+
+/* ===============================
+   BAGIAN BAWAH
+================================ */
+
+.detail-bottom {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 280px);
+
+    gap: 22px;
+
+    width: 100%;
+}
+
+.detail-bottom > div {
+
+    min-width: 0;
+}
+
+.detail-bottom ul {
+
+    margin: 0;
+
+    padding-left: 20px;
+
+    color: #dce7ec;
+
+    line-height: 1.9;
+
+    font-size: 14px;
+}
+
+
+/* ===============================
+   KATEGORI TERKAIT
+================================ */
+
+.related {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border:
+        1px solid #294453;
+
+    border-radius: 12px;
+
+    background: #07131d;
+}
+
+.related h4 {
+
+    font-size: 13px;
+}
+
+.tag {
+
+    display: inline-block;
+
+    margin: 3px;
+
+    padding: 7px 10px;
+
+    border:
+        1px solid #0879a8;
+
+    border-radius: 8px;
+
+    color: #dceaf0;
+
+    background: #071c28;
+
+    font-size: 11px;
+}
+
+
+/* ===============================
+   CATATAN
+================================ */
+
+.note {
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 11px 13px;
+
+    border:
+        1px solid #23516a;
+
+    border-radius: 9px;
+
+    color: #b9cbd4;
+
+    background: #071a28;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ===============================
+   TABLET
+================================ */
+
+@media (max-width: 800px) {
+
+    .mimpi-content {
+
+        max-width: 650px;
+
+        padding: 24px;
+    }
+
+    .detail-body {
+
+        grid-template-columns:
+            minmax(0, 220px)
+            minmax(0, 1fr);
+
+        gap: 18px;
+    }
+
+    .detail-icon {
+
+        min-height: 170px;
+
+        font-size: 75px;
+    }
+
+    .detail-bottom {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 220px);
+    }
+}
+
+
+/* ===============================
+   HP
+================================ */
+
+@media (max-width: 600px) {
+
+    .mimpi-modal {
+
+        padding: 8px;
+    }
+
+    .mimpi-content {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        max-height: 94vh;
+
+        padding: 20px 16px;
+
+        border-radius: 18px;
+    }
+
+
+    /* HEADER */
+
+    .detail-head {
+
+        gap: 12px;
+
+        padding-right: 45px;
+    }
+
+    .detail-number {
+
+        width: 50px;
+        height: 50px;
+
+        flex-basis: 50px;
+
+        font-size: 24px;
+    }
+
+    .detail-head h3 {
+
+        font-size: 22px;
+    }
+
+
+    /* GAMBAR DAN DESKRIPSI
+       JADI 1 KOLOM */
+
+    .detail-body {
+
+        display: block;
+
+        margin-top: 18px;
+    }
+
+    .detail-icon {
+
+        width: 100%;
+
+        min-height: 150px;
+
+        max-height: 190px;
+
+        font-size: 75px;
+
+        margin-bottom: 18px;
+    }
+
+    .detail-copy {
+
+        width: 100%;
+    }
+
+    .detail-copy h4 {
+
+        margin-bottom: 8px;
+    }
+
+    .detail-copy p {
+
+        font-size: 13px;
+
+        line-height: 1.65;
+    }
+
+
+    /* BAGIAN BAWAH
+       JADI 1 KOLOM */
+
+    .detail-bottom {
+
+        display: block;
+
+        width: 100%;
+    }
+
+    .detail-bottom > div {
+
+        width: 100%;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* KATEGORI */
+
+    .related {
+
+        width: 100%;
+    }
+
+
+    /* CATATAN */
+
+    .note {
+
+        font-size: 11px;
+    }
+}
+
+
+/* ===============================
+   HP KECIL
+================================ */
+
+@media (max-width: 380px) {
+
+    .mimpi-content {
+
+        padding: 18px 13px;
+    }
+
+    .detail-head h3 {
+
+        font-size: 20px;
+    }
+
+    .detail-number {
+
+        width: 46px;
+        height: 46px;
+
+        flex-basis: 46px;
+
+        font-size: 22px;
+    }
+
+    .detail-icon {
+
+        min-height: 135px;
+
+        font-size: 65px;
+    }
+
+    .detail-copy p {
+
+        font-size: 12px;
+    }
+}
+/* =========================================
+   HEADER BUKU MIMPI
+========================================= */
+
+.buku-mimpi-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 10px 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181329,
+            #0c0918
+        );
+
+    border: 1px solid #49355d;
+
+    border-radius: 8px;
+}
+
+
+/* LABEL */
+
+.bm-label {
+
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #81778f;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* JUDUL */
+
+.buku-mimpi-header h2 {
+
+    margin: 0;
+
+    color: #f5d263;
+
+    font-size: 14px;
+
+    font-weight: 900;
+}
+
+
+/* =========================================
+   TOMBOL BUKA
+========================================= */
+
+.btn-buka-mimpi {
+
+    min-width: 65px;
+
+    padding: 7px 12px;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 5px;
+
+    background: #06131c;
+
+    color: #00d9ff;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+
+/* HOVER */
+
+.btn-buka-mimpi:hover {
+
+    background: #00d9ff;
+
+    color: #001018;
+
+    box-shadow:
+        0 0 12px
+        rgba(0,217,255,.35);
+
+}
+
+
+/* SAAT AKTIF / TUTUP */
+
+.btn-buka-mimpi.aktif {
+
+    border-color: #ff4b4b;
+
+    color: #ff6969;
+
+    background: #190b0d;
+
+}
+
+
+.btn-buka-mimpi.aktif:hover {
+
+    background: #ff4b4b;
+
+    color: white;
+
+    box-shadow:
+        0 0 12px
+        #00ff2ae3;
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.buku-mimpi-content {
+
+    margin-top: 7px;
+
+    padding: 8px;
+
+    background: #0d091b;
+
+    border: 1px solid #302440;
+
+    border-radius: 8px;
+
+    animation:
+        bukaMimpi .25s ease;
+}
+
+
+@keyframes bukaMimpi {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-6px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+.buku-mimpi-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 12px;
+
+    background: #0f0a1c;
+
+    border: 1px solid #443052;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+.buku-mimpi-title span {
+    display: block;
+
+    color: #a99caf;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.buku-mimpi-title h2 {
+    margin: 3px 0 0;
+
+    color: #ffd84d;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+/* KUMPULAN TOMBOL */
+
+.buku-mimpi-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* TOMBOL CARI */
+
+#btnCariMimpi {
+    height: 32px;
+
+    padding: 0 12px;
+
+    border: 1px solid #00d9ff;
+    border-radius: 6px;
+
+    background: #07151d;
+
+    color: #00d9ff;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+#btnCariMimpi:hover {
+    background: #00d9ff;
+    color: #001018;
+
+    box-shadow:
+        0 0 12px rgba(0,217,255,.4);
+}
+
+
+/* TOMBOL BUKA */
+
+.btn-buka-mimpi {
+    height: 32px;
+
+    padding: 0 15px;
+
+    border: 1px solid #00d9ff;
+    border-radius: 6px;
+
+    background: #07151d;
+
+    color: #00d9ff;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.btn-buka-mimpi:hover {
+    background: #00d9ff;
+    color: #001018;
+}
