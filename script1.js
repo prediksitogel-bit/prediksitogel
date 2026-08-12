@@ -3,6 +3,7 @@
 ===================================================== */
 
 const DREAM_BOOK = {
+    
 "01" :"Penyair - Tapir - Sempritan - Rembulan - Tanggalan - Kumbakarna	2D	00 (97-48-64-98)",
 "02"	:"Sarjana - Bekicot - Loncat Tinggi - Wortel - Sandal - Betara Brahma	2D	02 (16-53-09-35)",
 "03" :"Kwan Im - Merak - Lompat Jauh,Loncat - Kangkung - Balon - Dewi Ratih	2D	04 (12-65-05-15)",
@@ -105,6 +106,33 @@ const DREAM_BOOK = {
 	
 };
 
+function tampilkanDreamBook(data) {
+
+    dreamList.innerHTML = "";
+
+    Object.entries(data).forEach(
+        ([nomor, isi]) => {
+
+            const item =
+                document.createElement("div");
+
+            item.className =
+                "dream-item";
+
+            item.innerHTML = `
+                <div class="dream-number">
+                    ${nomor}
+                </div>
+
+                <div class="dream-text">
+                    ${isi}
+                </div>
+            `;
+
+            dreamList.appendChild(item);
+        }
+    );
+}
 
 /* =====================================================
    ELEMENT BUKU MIMPI
@@ -138,7 +166,6 @@ function renderDreamBook() {
 
         });
 }
-
 
 /* =====================================================
    BUAT CARD
@@ -415,3 +442,4 @@ function fokusCariMimpi() {
     }, 100);
 
 }
+
