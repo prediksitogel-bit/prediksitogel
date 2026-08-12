@@ -860,11 +860,11 @@ footer {
 ========================================= */
 
 .dream-text {
-    width: 1200%;
+    width: 100%;
 
     color: #eee9f5;
 
-    font-size: 1px;
+    font-size: 5px;
 
     line-height: 11px;
 
@@ -951,7 +951,7 @@ footer {
 
 
     .dream-text {
-        font-size: 1px;
+        font-size: 5px;
 
         line-height: 12px;
 
@@ -990,7 +990,7 @@ footer {
 
 
     .dream-text {
-        font-size: 5px;
+        font-size: 8px;
 
         line-height: 11px;
     }
@@ -2055,7 +2055,7 @@ footer {
 
     color: #ddd6e6;
 
-    font-size: 5px;
+    font-size: 10px;
 
     line-height: 1.35;
 
@@ -2103,7 +2103,7 @@ footer {
     }
 
     .dream-text {
-        font-size: 15px;
+        font-size: 50px;
     }
 
 }
@@ -2478,5 +2478,167 @@ footer {
 
     .status {
         font-size: 11px;
+    }
+}
+
+/* =================================
+   KOTAK BUKU MIMPI
+================================= */
+
+.dream-list {
+    width: 100%;
+    max-width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+
+/* =================================
+   SETIAP KOTAK
+================================= */
+
+.dream-item {
+    width: 100%;
+    min-width: 0;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #ddd;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* =================================
+   NOMOR
+================================= */
+
+.dream-number {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    margin-bottom: 8px;
+
+    border-radius: 6px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =================================
+   TEKS BUKU MIMPI
+================================= */
+
+.dream-text {
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: lch(98% 0.35 17.58);
+
+    /* INI YANG MEMBUAT TEKS TURUN */
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+
+    word-wrap: break-word;
+
+    word-break: break-word;
+
+    /* Jangan sampai teks keluar kotak */
+    overflow: hidden;
+}
+
+
+/* =================================
+   HP / ANDROID
+================================= */
+
+@media screen and (max-width: 600px) {
+
+    .dream-list {
+        display: grid;
+
+        /* Satu kotak per baris */
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        gap: 8px;
+    }
+
+
+    .dream-item {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 10px;
+
+        border-radius: 8px;
+    }
+
+
+    .dream-number {
+        font-size: 11px;
+
+        padding: 4px 7px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .dream-text {
+        width: 100%;
+
+        font-size: 11px;
+
+        line-height: 1.5;
+
+        /* Wajib */
+        white-space: normal;
+
+        overflow-wrap: anywhere;
+
+        word-break: break-word;
+    }
+}
+
+
+/* =================================
+   HP KECIL
+================================= */
+
+@media screen and (max-width: 380px) {
+
+    .dream-item {
+        padding: 8px;
+    }
+
+    .dream-text {
+        font-size: 10px;
+
+        line-height: 1.45;
     }
 }
